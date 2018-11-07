@@ -16,8 +16,8 @@
     <script src="http://extras.denverpost.com/foundation/js/vendor/modernizr.js"></script>
     <style>
     body {
-        width: 600px;
-        margin: 0 auto;
+        /*width: 600px;
+        margin: 0 auto;*/
         font-family: 'Roboto', sans-serif;
         background-color: #fafafa;
     }
@@ -168,6 +168,14 @@
             line-height: 100%;
         }
     }
+
+    @media screen and (min-width: 800px) {
+
+        body {
+            padding-left: 130px;
+            padding-right: 130px;
+        }
+    }
     </style>
     <script>
     // Senate Democrats
@@ -211,7 +219,7 @@
                 '</tr>'
             ].join('');
         }
-        document.getElementById('senate-republicans').innerHTML = pre_html + '<h2 class="party-name-header" style="text-align: right;">Republicans ' + '<span class="big-number-rep">' + json.feed.entry[0].gsx$reptotal.$t + '</span></h2></th></tr>' + actual_html + post_html
+        document.getElementById('senate-republicans').innerHTML = pre_html + '<h2 class="party-name-header" style="text-align: right;">Republicans ' + '<span class="big-number-rep">' + json.feed.entry[0].gsx$reptotal.$t + '</span></h2></th></tr>' + actual_html + post_html + '<p class="note" style="text-align: right">*Senate seats not up for election in 2018</p>'
     }
     // House Democrats
     function displayHouseDemocrats(json) {
@@ -279,11 +287,11 @@
     <div class="row">
         <div class="table-container">
             <!-- Senate Democrats -->
-            <div id="senate-democrats" class="large-6 medium-6 small-12 columns" style="border-right: 2px solid #ddd">
+            <div id="senate-democrats" class="large-6 medium-6 small-12 columns" style="border-right: 2px solid #ddd; padding-right: 0px;">
                 <script src="https://spreadsheets.google.com/feeds/list/1RPcRaUJuXZXxeq_l9Ck1W9UMnf3WVI15spBinoGMg-o/od6/public/values?alt=json-in-script&amp;callback=displaySenateDemocrats"></script>
             </div>
             <!-- Senate Republicans -->
-            <div id="senate-republicans" class="large-6 medium-6 small-12 columns" style="padding-left: 5px">
+            <div id="senate-republicans" class="large-6 medium-6 small-12 columns" style="padding-left: 8px">
                 <script src="https://spreadsheets.google.com/feeds/list/1RPcRaUJuXZXxeq_l9Ck1W9UMnf3WVI15spBinoGMg-o/od6/public/values?alt=json-in-script&amp;callback=displaySenateRepublicans"></script>
             </div>
         </div>
@@ -297,11 +305,11 @@
     <div class="row">
         <div class="table-container">
             <!-- Democrats -->
-            <div id="house-democrats" class="large-6 medium-6 small-12 columns" style="border-right: 2px solid #ddd">
+            <div id="house-democrats" class="large-6 medium-6 small-12 columns" style="border-right: 2px solid #ddd; padding-right: 0px;">
                 <script src="https://spreadsheets.google.com/feeds/list/1RTCowN56kfE8kcoLPif4IrnG31ZIQJ7tQp34y4c-4KM/od6/public/values?alt=json-in-script&amp;callback=displayHouseDemocrats"></script>
             </div>
             <!-- Republicans -->
-            <div id="house-republicans" class="large-6 medium-6 small-12 columns" style="padding-left: 5px">
+            <div id="house-republicans" class="large-6 medium-6 small-12 columns" style="padding-left: 8px">
                 <script src="https://spreadsheets.google.com/feeds/list/1RTCowN56kfE8kcoLPif4IrnG31ZIQJ7tQp34y4c-4KM/od6/public/values?alt=json-in-script&amp;callback=displayHouseRepublicans"></script>
             </div>
         </div>
